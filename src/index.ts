@@ -1,10 +1,13 @@
 import express from "express";
+import cors from "cors";
 import routes from "./routes";
 import { SECRET_KEY } from "./config";
 import getToken from "./middlewares/jwt-middleware";
 import jwt from "express-jwt";
 
 const app = express();
+
+app.use(cors());
 
 // Setup data format to be used on express
 app.use(express.json());
